@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خولة خالد | خبراتي</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to left, #f3e5f5, #ede7f6);
+      color: #333;
+    }
+
+    section.projects {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    section.projects h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #6a1b9a;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+      text-align: right;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #7b1fa2;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- استدعاء الهيدر -->
+  <div id="header-placeholder"></div>
+
+  <!-- قسم المشاريع -->
+  <section class="projects">
+    <h2>خبراتي ومشاريعي</h2>
+
+    <div class="card-container">
+
+      <div class="card">
+        <img src="project1.png" alt="مشروع 1">
+        <h3>موقع شخصي تفاعلي</h3>
+        <p>برمجة واجهة ويب باستخدام HTML, CSS, JavaScript مع تصميم متجاوب وألوان جاذبة.</p>
+      </div>
+
+      <div class="card">
+        <img src="project2.png" alt="مشروع 2">
+        <h3>إنفوجرافيك طبي</h3>
+        <p>تصميم إنفوجرافيك توعوي ليوم السكري العالمي باستخدام Adobe Illustrator وPhotoshop.</p>
+      </div>
+
+      <div class="card">
+        <img src="project3.png" alt="مشروع 3">
+        <h3>عرض موشن جرافيك</h3>
+        <p>فيديو موشن قصير توعوي بتقنية الرسوم المسطحة باستخدام After Effects وتحريك سلس.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- استدعاء الفوتر -->
+  <div id="footer-placeholder"></div>
+
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.getElementById('menu')?.classList.toggle('show');
+      });
+
+      document.querySelector('.lang-btn')?.addEventListener('click', () => {
+        alert("ميزة تغيير اللغة قيد التطوير 🌍");
+      });
+    });
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+
+</body>
+</html>

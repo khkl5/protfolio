@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خولة خالد | شهاداتي</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ede7f6, #f3e5f5);
+      color: #333;
+    }
+
+    section.certificates {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    section.certificates h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #6a1b9a;
+    }
+
+    .cert-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .cert {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 260px;
+      padding: 1.5rem;
+      text-align: right;
+      transition: transform 0.3s;
+    }
+
+    .cert:hover {
+      transform: translateY(-6px);
+    }
+
+    .cert img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert h3 {
+      font-size: 1.1rem;
+      color: #7b1fa2;
+      margin-bottom: 0.5rem;
+    }
+
+    .cert p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.2rem;
+    }
+
+    .cert a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #6a1b9a;
+      text-decoration: underline;
+    }
+
+    .cert a:hover {
+      color: #4a148c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <div id="header-placeholder"></div>
+
+  <!-- قسم الشهادات -->
+  <section class="certificates">
+    <h2>شهاداتي</h2>
+
+    <div class="cert-container">
+
+      <div class="cert">
+        <img src="cert1.png" alt="شهادة بايثون">
+        <h3>أساسيات بايثون</h3>
+        <p>منصة: Coursera</p>
+        <p>2024</p>
+        <a href="#">عرض الشهادة</a>
+      </div>
+
+      <div class="cert">
+        <img src="cert2.png" alt="شهادة تصميم">
+        <h3>تصميم واجهات UI/UX</h3>
+        <p>منصة: Udemy</p>
+        <p>2023</p>
+        <a href="#">عرض الشهادة</a>
+      </div>
+
+      <div class="cert">
+        <img src="cert3.png" alt="شهادة Adobe">
+        <h3>Adobe Illustrator</h3>
+        <p>منصة: مهارة</p>
+        <p>2022</p>
+        <a href="#">عرض الشهادة</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <div id="footer-placeholder"></div>
+
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.getElementById('menu')?.classList.toggle('show');
+      });
+
+      document.querySelector('.lang-btn')?.addEventListener('click', () => {
+        alert("ميزة تغيير اللغة قيد التطوير 🌍");
+      });
+    });
+
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+</body>
+</html>

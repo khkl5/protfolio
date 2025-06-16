@@ -1,0 +1,111 @@
+<header dir="rtl">
+  <style>
+    header {
+      background: linear-gradient(to left, #7b1fa2, #9c27b0);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-menu a:hover {
+      background-color: #eee;
+    }
+
+    .lang-btn {
+      background-color: #fff;
+      color: #6a1b9a;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+
+    /* لإظهار القائمة عند الضغط */
+    .nav-menu.show {
+      display: block;
+    }
+  </style>
+
+  <div class="logo" onclick="window.location.href='index.html'">خولة خالد</div>
+
+  <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ القائمة</button>
+    <div class="nav-menu" id="menu">
+      <a href="index.html">عني</a>
+      <a href="certificates.html">شهاداتي</a>
+      <a href="projects.html">خبراتي</a>
+      <a href="contact.html">تواصل معي</a>
+    </div>
+  </nav>
+
+  <button class="lang-btn" onclick="toggleLanguage()">English</button>
+
+<script>
+  // تحميل الهيدر
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // إعادة تفعيل القائمة المنسدلة
+      document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.getElementById('menu')?.classList.toggle('show');
+      });
+
+      // زر تغيير اللغة
+      document.querySelector('.lang-btn')?.addEventListener('click', () => {
+        alert("ميزة تغيير اللغة قيد التطوير 🌍");
+      });
+    });
+
+  // تحميل الفوتر (عادي)
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
+
+</header>
